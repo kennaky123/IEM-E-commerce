@@ -1,0 +1,13 @@
+{
+  "name": "pc-parts-ecommerce-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PC Parts / Audio E-Commerce Platform with Separated Storefront and TailAdmin Portals",
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:shop": "npm --prefix frontend run dev",
+    "dev:admin": "npm --prefix admin run dev",
+    "build:all": "npm --prefix backend run build && npm --prefix frontend run build && npm --prefix admin run build",
+    "test:backend": "npm --prefix backend test"
+  }
+}

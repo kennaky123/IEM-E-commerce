@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+@theme {
+  /* Shop — Colors */
+  --color-canvas-mist: #f2f4f5;
+  --color-pure-white: #ffffff;
+  --color-ink-black: #000000;
+  --color-faint-border: #ebebeb;
+  --color-muted-gray: #787574;
+  --color-cool-stone: #cccccc;
+  --color-warm-fog: #acb0aa;
+  --color-shop-violet: #5433eb;
+  --color-violet-wash: #c0b5f3;
+  --color-slate-ink: #332f2d;
+  --color-ash-veil: #665a54;
+
+  /* Shop — Typography */
+  --font-gt-standard: 'GT Standard', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-shopify-sans: 'Shopify Sans', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sl-condensed: 'GT Standard', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sl-light: 'GT Standard', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sl-regular: 'GT Standard', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Shop — Border Radius */
+  --radius-cards: 28px;
+  --radius-pills: 20px;
+  --radius-full: 9999px;
+
+  /* Shop — Elevation Shadows */
+  --shadow-sm: rgba(0, 0, 0, 0.06) 0px 2px 8px 0px;
+  --shadow-sm-2: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+  --shadow-lg: rgba(0, 0, 0, 0.12) 0px 4px 24px 0px;
+  --shadow-lg-2: rgba(69, 36, 219, 0.34) 0px 4px 24px 0px;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.33;
+    letter-spacing: -0.031em;
+    background-color: var(--color-canvas-mist);
+    color: var(--color-ink-black);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, strong, th {
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  /* Shop System Cards & Pills */
+  .shop-card {
+    background-color: var(--color-pure-white);
+    border-radius: var(--radius-cards);
+    box-shadow: var(--shadow-sm-2);
+  }
+
+  .shop-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-pure-white);
+    border: 1px solid var(--color-faint-border);
+    box-shadow: var(--shadow-sm);
+    color: var(--color-ink-black);
+  }
+
+  .shop-violet-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background-color: var(--color-shop-violet);
+    color: var(--color-pure-white);
+    box-shadow: var(--shadow-lg-2);
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+
+  .shop-violet-submit:hover {
+    transform: scale(1.04);
+  }
+
+  .shop-carousel-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-pure-white);
+    color: var(--color-ink-black);
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+
+  .shop-carousel-arrow:hover {
+    transform: scale(1.08);
+  }
+
+  /* Shop Typographic Voices (Optical Weight 400 + Tight Negative Tracking) */
+  .sl-label {
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: -0.017em;
+  }
+
+  .sl-heading {
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+  }
+
+  .sl-subheading {
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.05em;
+  }
+
+  .sl-display {
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+  }
+
+  .sl-body {
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.33;
+    letter-spacing: -0.014em;
+  }
+
+  /* Pillow-Soft Pill Buttons (9999px radius) */
+  .sl-btn-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border: 1px solid var(--color-faint-border);
+    border-radius: 9999px;
+    background-color: var(--color-pure-white);
+    color: var(--color-ink-black);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: -0.014em;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .sl-btn-light:hover:not(:disabled) {
+    background-color: var(--color-ink-black);
+    color: var(--color-pure-white);
+    border-color: var(--color-ink-black);
+  }
+
+  .sl-btn-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    background-color: var(--color-ink-black);
+    color: var(--color-pure-white);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: -0.014em;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .sl-btn-dark:hover:not(:disabled) {
+    background-color: var(--color-shop-violet);
+    box-shadow: var(--shadow-lg-2);
+  }
+
+  .sl-btn-light:disabled,
+  .sl-btn-dark:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* Pill Badges (9999px radius) */
+  .sl-badge-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid var(--color-faint-border);
+    border-radius: 9999px;
+    background-color: var(--color-pure-white);
+    color: var(--color-ink-black);
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: -0.017em;
+  }
+
+  .sl-badge-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    background-color: var(--color-slate-ink);
+    color: var(--color-pure-white);
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: -0.017em;
+  }
+
+  /* Inline Text Links */
+  .sl-link {
+    font-family: var(--font-gt-standard);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.33;
+    letter-spacing: -0.014em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .sl-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  @keyframes pageFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .animate-page-entrance {
+    animation: pageFadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
